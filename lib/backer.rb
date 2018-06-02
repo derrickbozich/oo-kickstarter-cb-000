@@ -7,7 +7,7 @@ class Backer
     @name = name
   end
 
-  def self.all
+  def backed_projects
     @@backed_projects
   end
 
@@ -15,6 +15,27 @@ class Backer
     @@backed_projects << project
   end
 
+end
 
+class Project
+  attr_accessor :title
+
+  @@backers = []
+
+  def backers
+    @@backers
+  end
+
+  def initialize(title)
+    @title = title
+  end
+
+  def add_backer(backer)
+    @@backers.push(backer)
+  end
 
 end
+
+monopoly_man = Backer.new("Monopoly Man")
+stackables = Project.new("Stackables")
+monopoly_man.back_project(stackables)
