@@ -19,26 +19,8 @@ class Backer
 
 end
 
-class Project
-  attr_accessor :title
 
-  @@backers = []
-
-  def backers
-    @@backers
-  end
-
-  def initialize(title)
-    @title = title
-  end
-
-  def add_backer(backer)
-    @@backers.push(backer)
-    backer.backed_projects.push(self)
-  end
-
-end
-
-monopoly_man = Backer.new("Monopoly Man")
-stackables = Project.new("Stackables")
-monopoly_man.back_project(stackables)
+#
+# monopoly_man = Backer.new("Monopoly Man")
+# stackables = Project.new("Stackables")
+# monopoly_man.back_project(stackables)
